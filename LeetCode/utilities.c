@@ -1,6 +1,6 @@
 #include "utilities.h"
 
-void showValue(struct ListNode *ret)
+void showListValue(struct ListNode *ret)
 {
     while (ret != NULL)
     {
@@ -10,15 +10,15 @@ void showValue(struct ListNode *ret)
     printf("NULL\n");
 }
 
-void showAllValue(struct ListNode **ret, int num)
+void showListsValue(struct ListNode **ret, int num)
 {
     for (int i = 0; i < num; i++)
     {
-        showValue(ret[i]);
+        showListValue(ret[i]);
     }
 }
 
-struct ListNode** initValue(int value[MAX_SIZE][MAX_SIZE], int *nums, int num)
+struct ListNode** initLists(int value[MAX_SIZE][MAX_SIZE], int *nums, int num)
 {
     struct ListNode** input = (struct ListNode**)malloc(sizeof(struct ListNode**));
     for (int i = 0; i < num; i++)
@@ -38,6 +38,15 @@ struct ListNode** initValue(int value[MAX_SIZE][MAX_SIZE], int *nums, int num)
         input[i] = head_node.next;
     }
     return input;
+}
+
+void showIntArray(int *array, int number)
+{
+    for (int i = 0; i < number; i++)
+    {
+        printf("%d ", array[i]);
+    }
+    printf("\n");
 }
 
 /*
